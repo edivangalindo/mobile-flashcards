@@ -1,21 +1,64 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { View } from 'react-native';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import { StackNavigator } from 'react-navigation';
+import reducer from './reducer';
 
-export default class App extends React.Component {
+import Home from './components/Home';
+import Quiz from './components/Quiz';
+import CreateDeck from './components/Deck/CreateDeck';
+import Deck from './components/Deck/Deck';
+import AddCard from './components/AddCard';
+
+import { purple } from './utils/colors';
+import { setLocalNotification } from './utils/utils';
+
+const Stack = StackNavigator({
+  Home: {
+    screen: Home,
+    navigationOptions: {
+      title: 'Home'
+    }
+  },
+  Deck: {
+    screen: Deck,
+    navigationOptions: {
+      title: 'Deck'
+    }
+  },
+  CreateDeck: {
+    screen: CreateDeck,
+    navigationOptions: {
+      title: 'Create Deck'
+    }
+  },
+  AddCard: {
+    screen: AddCard,
+    navigationOptions: {
+      title: 'Add Card'
+    }
+  },
+  Quiz: {
+    screen: Quiz,
+    navigationOptions: {
+      title: 'Quiz'
+    }
+  }
+});
+
+export default class App extends Component {
+  componentDidMount() {
+    setLocalNotification();
+  }
+
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-      </View>
+      <Provider store={createStore(reducer)}>
+        <View style={{ flex: 1 }}>
+          <Stack />
+        </View>
+      </Provider>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
