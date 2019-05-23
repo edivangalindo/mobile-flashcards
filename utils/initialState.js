@@ -6,17 +6,17 @@ const initialState = {
     title: 'React',
     questions: [
       {
-        id: 'edcba',
+        id: uuid(),
         question: 'React is based on imperative programming',
         answer: false
       },
       {
-        id: 'gbsiuyrf',
+        id: uuid(),
         question: 'React can render on client-side and server-side',
         answer: true
       },
       {
-        id: 'edgncy3gfcba',
+        id: uuid(),
         question: 'React was started by the developers at Twitter',
         answer: false
       }

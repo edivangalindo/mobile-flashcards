@@ -1,2 +1,2 @@
-export const gray = '#757575';
+export const gray = '#797083';
 export const blue = '#4e4cb8';
