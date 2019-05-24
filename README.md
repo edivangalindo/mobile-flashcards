@@ -12,4 +12,4 @@ Em seguida rode:
 
     $ npm start
 
-Para visualizar o app no celular, escaneie o QR com o aplicativo do expo.
+Para visualizar o app no celular, escaneie o QR com o aplicativo do expo (Testado apenas em Android).
