@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "babel-preset-expo": "^5.0.0",
-    "react-native-scripts": "1.5.0",
+    "react-native-scripts": "1.14.1",
     "react-redux": "5.0.6"
   },
   "private": true
